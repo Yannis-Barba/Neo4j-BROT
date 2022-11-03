@@ -19,11 +19,15 @@ graph.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r")
 #importation des jeux de données
 
 
-traits_df = pd.read_csv("./datasets-test/BROT2_dat.csv", delimiter=",", encoding="ISO-8859-1")
+data_df = pd.read_csv("./datasets-test/BROT2_dat.csv", delimiter=",", encoding="ISO-8859-1")
+
+traits_df = pd.read_csv("./datasets-test/traits.csv", delimiter=",", encoding="ISO-8859-1")
 
 taxons_df = pd.read_csv("./datasets-test/BROT2_tax.csv", delimiter=",", encoding="ISO-8859-1")
 
 sources_df = pd.read_csv("./datasets-test/BROT2_sou.csv", delimiter=",", encoding="ISO-8859-1")
+
+
 
 ### Noeuds TAXONS
 """
@@ -59,8 +63,23 @@ for index, row in sources_df.iterrows():
                         fullSource=str(row["FullSource"])
                         ))
 
+### Noeuds traits
+"""
+j'ai créé la table trait afin de renseigner des informations de la doc. 
+"""
 
-### Noeuds DATA et TRAIT
+traitsName = []
+traits = []
+
+for index, row in traits_df.iterrows():
+    traitsName.append(row["TraitName"])
+    traits.append(Node("Trait",
+                  name=str(row["TraitName"]),
+                  fullName=str(row["fullName"]),
+                  explanation=str(row["explanation"])
+                  ))
+
+### Noeuds DATA
 
 """
 Les traits ne sont pas une table à part entière dans le jeu de données de base, mais on extrait tout de même ces noeuds
@@ -70,14 +89,11 @@ De plus, cela nous permet d'avoir des informations sur le nombre de trait prése
 
 data = []
 
-traitsName = []
-traits = []
-
 data_traits_rel = []
 data_taxons_rel = []
 data_sources_rel = []
 
-for index, row in traits_df.iterrows():
+for index, row in data_df.iterrows():
     data.append(Node("Data",
                                 id=str(row['ID']),
                                 name=str(row["Data"]+"--" +row["Trait"]),
@@ -96,11 +112,7 @@ for index, row in traits_df.iterrows():
                                 comments=str(row["Comments"])
                                 ))
     
-    if(row["Trait"] not in traitsName):
-        traitsName.append(str(row["Trait"]))
-        traits.append(Node("Trait",
-                            name=str(row["Trait"]), 
-                            ))
+    
     data_traits_rel.append(Relationship(data[index], "TYPE_OF_TRAIT", traits[traitsName.index(str(row["Trait"]))]))
     
     data_taxons_rel.append(Relationship(data[index], "TRAIT_OF_TAXON", taxons[taxonsId.index(str(row["TaxonID"]))]))
@@ -111,19 +123,19 @@ for index, row in traits_df.iterrows():
 
 #### Taxons nodes
 tx = graph.begin()
-for node in taxons[0:75]:
+for node in taxons:
     tx.create(node)
 graph.commit(tx)   
 
 #### Sources Nodes
 tx=graph.begin()
-for node in sources[0:75]:
+for node in sources:
     tx.create(node)
 graph.commit(tx)
 
 #### Data Dodes
 tx = graph.begin()
-for node in data[0:100]:
+for node in data:
     tx.create(node)
 graph.commit(tx)
 
@@ -139,7 +151,7 @@ graph.commit(tx)
 #### Data and traits relation
 
 tx = graph.begin()
-for r in data_traits_rel[0:100]:
+for r in data_traits_rel:
     tx.create(r)
 graph.commit(tx)
 
@@ -147,7 +159,7 @@ graph.commit(tx)
 #### Data and taxons relations
 
 tx = graph.begin()
-for r in data_taxons_rel[0:100]:
+for r in data_taxons_rel:
     tx.create(r)
 graph.commit(tx)
 
@@ -155,6 +167,6 @@ graph.commit(tx)
 #### Data and sources relations
 
 tx = graph.begin()
-for r in data_sources_rel[0:100]:
+for r in data_sources_rel:
     tx.create(r)
 graph.commit(tx)

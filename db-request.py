@@ -55,8 +55,9 @@ allSources = allSourcesOfTaxon("Acanthus spinosus")
 
 def allTaxonsWithTrait(trait):
     rq = ''' match(t:Trait {name: $trait})<-[:TYPE_OF_TRAIT]-(d:Data)-[:TRAIT_OF_TAXON]->(tx:Taxon) 
-    return t.name as trait, 
-           d.data as data, 
+    return t.fullName as trait, 
+           d.data as data,
+           t.explanation as explication,
            tx.family as famille, 
            tx.taxon as taxon    
     '''
@@ -64,3 +65,28 @@ def allTaxonsWithTrait(trait):
 
 
 allTaxonWithTrait = allTaxonsWithTrait("GrowthForm")
+#allTaxonWithTrait.loc[0]["explication"]
+
+## Get all taxon with specific trait and specific modality
+
+def allTaxonWithTraitAndModality(trait, modality):
+    rq = ''' match(t:Trait {name: $trait})<-[:TYPE_OF_TRAIT]-(d:Data {data: $modality})-[:TRAIT_OF_TAXON]->(tx:Taxon) 
+        return t.fullName as trait, 
+               d.data as data, 
+               t.explanation as explication, 
+               tx.family as famille, 
+               tx.taxon as taxon
+    '''
+    return graph.run(rq, trait=trait, modality=modality).to_data_frame()
+
+BudSourceAndRootCrown = allTaxonWithTraitAndModality("BudSource", "root crown")
+
+## Requêtes concernant les incendies
+""" Comme l'étude est notamment portée sur les traits qui permettent le développement ou non d'un taxon
+après un incendie, on peut regarder requêtes concernant ces traits en particuliers"""
+
+
+
+
+
+
