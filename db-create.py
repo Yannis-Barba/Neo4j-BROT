@@ -37,6 +37,7 @@ for index, row in taxons_df.iterrows():
     taxonsId.append(str(row["ID"]))
     taxons.append(Node("Taxon",
                   id=str(row["ID"]),
+                  taxon=str(row["Genus"]+" "+row["Species"]),
                   family=str(row["Family"]),
                   genus=str(row["Genus"]),
                   species=str(row["Species"]),
