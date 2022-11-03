@@ -1,0 +1,84 @@
+TraitName,fullName,explanation
+GrowthForm,Growth form,Morphology of the whole plant related with its size (for non-disturbed individuals).
+DispMode,Dispersal mode,"The vector(s) used for dispersal (of seeds or any other dispersal unit for sexual reproduction). One or
+several types, e.g.: GW means that both Gravity and Wind are important); if several, typically the ﬁrst is
+the most important."
+FruitType,Fruit type,Type of the fruit. Including single or aggregated fruits (dispersal unit).
+RespFire,Resprouting capacity after ﬁre,"Resprouting capacity after one year when most of the plant has been scorched (average proportion of
+adult plants that resprout as percentage). Not reported for annual plants (which can be assumed to be
+RespFire = no)."
+SeedlEmerg,Post-ﬁre seedling emergence,"Average density of seedlings per pre-ﬁre mature individuals emerged during the ﬁrst year after ﬁre. This
+is a ratio (number of seedlings / number of mature plants)"
+Clonality,Clonality,Ability to colonize the space through vegetative reproduction.
+FruitMass,Fruit dry mass,"Average dry mass (mg) of single or aggregated fruits (excluding some single-seeded fruits such as achenes
+or caryopsis, that are typically considered as ""seeds"")."
+SeedMass,Seed dry mass,Average dry mass of seeds (including some single-seeded fruits such as achenes or caryopsis) (mg)
+LeafDivision,Leaf division degree,"Division degree of leaves (or phyllodes). For species with different stem and basal leaves, it refers to stem
+Leaves."
+LeafLifespan,Average leaf lifespan,"Average time period (months) during which an individual leaf (or phyllodes) of a woody species is alive
+and physiologically active 40 ( = leaf longevity). For woody species only."
+LeafShape,Basic leaf shape,"Shape of leaves, phyllodes or leaﬂets for compound leaves. For species with different stem and basal
+leaves, it refers to stem leaves"
+LNCm,Mass-based leaf nitrogen content,"Leaf nitrogen content (mass-based) (mg g −1 ), that is, the ratio of the quantity of nitrogen in the leaf per
+respective unit dry mass"
+SLA,Average speciﬁc leaf area,"Average bark thickness (mm) of the main stem at breast height for trees; if available, it should include the
+diameter (cm) at the height that the bark was measured (as quantitative conditional, i.e., BT|Diam). For
+woody plants only. Note that in many cases both BT and Diam are mean values of a population (not for
+an individual tree)."
+StemDensity,Stem speciﬁc density,"Oven-dry mass divided by the fresh volume of a section of the main stem 40 (excluding bark for woody
+species; i.e., wood density) (g cm -3 )."
+NutritionalRelat,Nutritional relationships,Long-term relationship with other species that are implicated in nutrient and/or energy uptake.
+LeafPhenology,Leaf phenology,Phenology of leaves (or phyllodes). For woody species only.
+Height,Average height,"Maximum height (m), excluding extremes and reproductive shoots."
+Lifespan,Lifespan,Average maximum age ( = longevity) for perennials (year).
+Diaspore,Diaspore,Dispersal unit for sexual reproduction.
+BudSource,Bud source,Location of the bud bank for resprouting species
+SoilSeedBank,Soil seed bank longevity,"Period that seeds remain viable in the soil seed bank inferred from: soil and vegetation comparisons (veg),
+experimental seed burial (bur), seed dormancy (dor) or unknown methods (unk). The method used is
+indicated after the vertical bar (response|method, e.g., persistent|veg)."
+LeafArea,Average leaf area,"Average one-sided projected surface area (mm 2 ) of an individual leaf (or phyllodes) 40 . For compound
+leaves, leaﬂets area × leaﬂets number. For species with different stem and basal leaves, it refers to stem
+Leaves."
+Spinescence,Spinescence,"Presence/absence of spines, thorns, prickles and/or spiny leaves in vegetative organs."
+SeedShape,Basic seed shape,"Ratio between the two maximum diameters: ﬁrst maximum divided by the second maximum, excluding
+structures attached to the seed coat as wings or pappus."
+RespClip,Resprouting capacity after clipping,"Resprouting capacity one year after clipping 100% of the plant as average proportion of adult plants that
+resprout (percentage). Not reported for annual plants (which can be assumed to be RespClip = no)."
+MatResp,Age at maturity of resprouts,"Average age of resprouts at the ﬁrst successful reproduction (yr), i.e. when most of the resprouted plants
+produce the ﬁrst seed crop."
+RootDepth,Maximum rooting depth,Maximum depth of the roots (m).
+LDMC,Leaf dry matter content,"Dry matter content of leaves (mg g −1 ), that is, the ratio of the dry mass of a leaf to its water saturated
+fresh mass"
+ChemCues,Chemical germination cues,"Germinative response to smoke (smk), ash (ash), charcoal (cha), nitrogenous compounds like KNO 3
+(NC1), NaNO 2 (NC2), NH 4 Cl (NC3), NH 4 HOC 3 (NC4), NH 4 NO 3 (NC5), or response to karrikins
+(KAR), cyanohydrins (CYN, including several cyanides, mandelonitrile, and glyceronitrile). The response
+in indicated before the vertical bar, and the chemical cue tested, after the vertical bar (e.g. stimulation|
+Smk)."
+OtherCues,Other germination cues,"Germination response to exposition to boiling water (blw), mechanical scariﬁcation (mec), summer
+temperature (tsu), temperature ﬂuctuation (tfu), light (lgt). The response is indicated before the bar and
+the cue tested is indicated after the vertical bar (category|cue, e.g., stimulation|blw)."
+P50,Resistance to xylem cavitation,Xylem resistance to drought-induced cavitation (in MPa)
+HeatStimGerm,Heat-stimulated germination,"The highest intensity in heat treatments (i.e., seed exposition to dry heat > = 50 °C) that produce higher
+germination than the control (i.e., stimulated germination). Heat intensity deﬁned as: Low (L: o100 °C
+during o = 5 min.), Moderate (M:o100 °C during >5 min. or > = 100 °C during o = 5 min.), High
+(H: > = 100 °C during >5 min.) or unknown (unk). Note that in many cases, post-treatment seed viability
+is not considered or not speciﬁed. The heat intensities tested for each experiment are indicated after
+the vertical bar (category|LMH), with an underscore when the corresponding heat intensity is not tested
+(e.g., category|L_H)."
+FireStimFlower,Fire-stimulated ﬂowering,Fire-stimulated ﬂowering in post-ﬁre resprouters.
+BarkThick,,
+CFFuel,Coarse:ﬁne fuel,"Coarse to ﬁne fuel biomass ratio (i.e., > = 6 mm diameter and o6 mm diameter, respectively), including
+live and dead material."
+DeadFuel,Dead ﬁne fuel,"Standing ﬁne ( o 6 mm diameter) dead biomass (including twigs, leaves, inﬂorescences, bark) attached to
+the plant during the dry season expressed in proportion of the aboveground biomass (for non-senescent
+Individuals) (%)."
+d13C,Integrated water-use efﬁciency,Delta 13C (δ13C) isotope ratio
+SRR,Shoot:root ratio,"Shoot to root dry mass ratio in saplings ( o = 3 years old), excluding those from plantations."
+RespDist,Resprouting capacity after disturbances,"Resprouting capacity after undeﬁned disturbances (average proportion of adult plants that resprout as
+percentage). Not reported for annual plants (which can be assumed to be RespDist = no)."
+MatSap,Age at maturity of saplings,"Average age of saplings at the ﬁrst successful reproduction (yr), i.e. when most of the saplings produce the
+ﬁrst seed crop, excluding saplings from plantations."
+SeedProd,Annual seed production,Average number of seeds per plant produced every year (# seeds).
+SeedlSurv,Post-ﬁre seedling survival,Proportion of seedlings surviving the ﬁrst dry season after ﬁre (%).
+CanopySeedBank,Canopy seed bank longevity,Presence and longevity of the stored seeds in the canopy.
+SerotinyLevel,Serotiny level,Average proportion of serotinous (closed) cones in the canopy (%)
