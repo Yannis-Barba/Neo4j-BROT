@@ -14,7 +14,7 @@ from pandas import DataFrame
 graph = Graph("bolt://localhost:7687", auth=("neo4j", "root"))
 
 # petit nettoyage de la base avant de commencer
-#graph.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r")
+graph.run("MATCH (n) OPTIONAL MATCH (n)-[r]-() DELETE n,r")
 
 #importation des jeux de données
 
