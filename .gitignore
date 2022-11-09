@@ -2,3 +2,8 @@ datasets-test/.~lock.BROT2_dat.csv#
 datasets-test/.~lock.BROT2_sou.csv#
 datasets-test/.~lock.BROT2_tax.csv#
 datasets-test/.~lock.traits.csv#
+
+.spyproject/config/backups/workspace.ini.bak
+.spyproject/config/workspace.ini
+.ipynb_checkpoints/
+__pycache__/
